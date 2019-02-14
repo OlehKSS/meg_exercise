@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# data for each subject
+# scp -r okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/data/aamod_meg_get_fif_00001/CC620085 ./data
+# scp -r okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/data/aamod_meg_get_fif_00001/CC320359 ./data
+# scp -r okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/data/aamod_meg_get_fif_00001/CC721504 ./data
+
+# transformations
+# scp okozynet@drago:/storage/store/data/camcan-mne/trans/sub-CC620085-trans.fif ./data/trans
+# scp okozynet@drago:/storage/store/data/camcan-mne/trans/sub-CC320359-trans.fif ./data/trans
+# scp okozynet@drago:/storage/store/data/camcan-mne/trans/sub-CC721504-trans.fif ./data/trans
+
+# empty room recodings
+# scp okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/emptyroom/CC620085/emptyroom_CC620085.fif ./data/CC620085
+# scp okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/emptyroom/CC320359/emptyroom_CC320359.fif ./data/CC320359
+# scp okozynet@drago:/storage/store/data/camcan/camcan47/cc700/meg/pipeline/release004/emptyroom/CC721504/emptyroom_CC721504.fif ./data/CC721504
+
+# freesurfer data for selected subjects
+scp -r okozynet@drago:/storage/store/data/camcan-mne/freesurfer/CC620085 ./data/freesurfer
+scp -r okozynet@drago:/storage/store/data/camcan-mne/freesurfer/CC320359 ./data/freesurfer
+scp -r okozynet@drago:/storage/store/data/camcan-mne/freesurfer/CC721504 ./data/freesurfer
+
+# co-registration command
+# mne coreg -s CC620085 -d /home/okozyn/Projects/inria/meg_exercise/data/freesurfer --trans /home/okozyn/Projects/inria/meg_exercise/data/trans/sub-CC320359-trans.fif
